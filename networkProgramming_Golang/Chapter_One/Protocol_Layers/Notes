@@ -1,0 +1,30 @@
+Intro Duction -> 
+---------------------------
+Distributed systems is hard because it involves different computers, and this different computers have
+different applications talking to different applications on different computers on the same or different or 
+different networks. god!, saying it like this makes it even harder. All the different computers have to be
+connected in some way, this is even harder to do.
+
+			ISO OSI Model
+-------------------------------------------------------------------
+
+Application					Application
+    |						    |
+Presentation					Presentation
+    |						    |
+Session						Session
+    |						    |
+Transport					Transport
+    |						    |
+Network						Network
+    |						    |
+Data Link					Data Link
+    |						    |
+Physical					Physical
+    |						    |
+    -------------------------------------------------
+
+Packet Encapsulation
+---------------------------------
+fuck this. notes were handwritten by our forefathers. either on stones or leather
+or sand or mud or on paper by gen Y motherfuckers and thats what imma do!

@@ -1,0 +1,37 @@
+Acceptance Factors
+-------------------------------
+acceptance factors of distributed systems are similar to those of stand-alone system.
+this include:
+-> reliability
+-> performance
+-> responsiveness
+-> scalability
+-> capacity
+-> security
+
+Transparency
+------------------
+'The Holy Grails' of distributed systems are as follows;
+> access transparency -> user shd not know(or need to know) is access to all or parts of systems is local or remote.
+> location 	 -> location of service or system shd not matter.
+> migration 	-> parts of the system moving to new locations shd make no difference to user in acceptance factors.
+> replication	-> shdnt matter if one or multiple instances of the system is running.
+> concurrency	-> there shd be no interference(conflict) between parts of system running concurrently.
+> scalability	-> it shdnt matter if one or millions of users are using the system.
+> performance	-> performance shd not be affected by any of the system on network x'tics.
+> failure	-> the system shd not fail(LOL!). If it fails, the system shd recover without user noticing failure occured.(another big LOL!).
+
+All the above are what distributed systems are supposed to achieve in THEORY and practice. google seems to achieve all the above 'holy grails of distributed systems' SEEMLESSLY. making you wonder if it is humans or aliens doing the engineering work.
+
+
+Eight Fallacies of Distributed Computing
+--------------------------------------------------
+1. the network is reliable
+2. latency is zero
+3. bandwith is infinite
+4. the network is secure
+5. topology doesnt change
+6. there is one administrator
+7. transport cost is zero
+8. the network is homogeneous
+-> Funny thing is even my mother knows all these to be fallacies and she didnt have to go to school or read a book. Some of the advantages of living in Ghana. LOL!
