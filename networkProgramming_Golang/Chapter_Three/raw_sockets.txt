@@ -1,0 +1,24 @@
+Raw Sockets
+==============================
+
+what are raw sockets?
+ -> they are used to recieve raw packets that do not go through the processing that tcp/ip packets are subjected to.
+  this means the way the packet is recieved at the ethernet layer is the way it is recieved.
+->Usually when a packet is sent or recieved, the system processes it and extracts or adds data as
+  passes through the each layer of the network start implemented by the kernel.but with raw sockets
+  the raw packet with all the raw info {ethernet header, ethernet protocol header, transport layer
+  protocol layer, data}. When we connect to the internet our system recieves this, but it is
+  stripped down at every layer in the network stack that we end up with only the data. But if
+  you are curious enough and want the whole bunch of data that is recieved you could do so by
+  dabbling with raw sockets. Also packet sniffers are implemented with raw sockets. Wireshark uses
+  this tooooooo.
+
+Opening A Raw Socket
+---------------------------
+To open a raw socket, you have to know a bunch of things. And what better place to learn bunch
+of things than stackoverflow, linux man pages and wikipedia :). Because everything in unix is 
+a file.. to do some socket communication, you have to get the file descriptor of the endpoint to
+talk to. So sending and recieving is basically just a fancy write and read of files. Most of this
+is done in c programming language but i'm quite sure you can do it too in go too, only thing is 
+theres not alot of literature on doing this in go since it is a relatively new language. The 
+signature of the socket function is [ int socket(int domain, int type, int protocol); ].
