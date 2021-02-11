@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	ErrBufull    error  = errors.New("buffer is full, consider reading before adding")
+	ErrBufull    error  = errors.New("buffer is full, consider reading before writing")
 	typeMismatch string = `expected %s but got %s`
 )
 
