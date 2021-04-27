@@ -18,16 +18,16 @@ import (
    forbidden fruit? ...Nothing LOL!.
 
    Lets take a look at what type safety is in golang. Nahh what is type safety in general?
-   Lets take a quick trip to wikipedia and check it out. According to wikipedia
-   "According to wikipedia, type safety is the extent to which a language discourages or prevents
-   type errors." Type errors arise performing operations on types you are not supposed to perform
-   such operations on. Example "2 / 'Hello'" results in a big fat type error. Because it is illegal
-   to perform division on a integer and a string. Atleast in Go. Maybe javascript? LOL.
+   Lets take a quick trip to wikipedia and check it out.
+   According to wikipedia, "type safety is the extent to which a language discourages or prevents
+   type errors". Type errors arise from performing operations on data types you are not supposed to perform
+   such operations on. Example, "2 / 'Hello'" results in a big fat type error. Because it is illegal
+   to perform division on a integer and a string. Atleast in Go. Maybe you can in javascript? (i'm just messing!).
 
-   Go is type safe in that it doesnt allow you to mess up with types in ways that will make the
-   program crush. Also in lowlevel sense you cant do anything you like with pointers. In some langs
-   you can do pretty much anything with pointers, like accessing arbitrary memory through incrementing
-   or decrementing the pointer or reading or data of another type that will fit that memory. Go
+   Go is type safe in that it doesn't allow you to mess up with the data types in ways that will make the
+   program crush. Also in lowlevel sense you can't do everything you like with pointers. In some langs
+   you can do pretty much anything you want with pointers, like accessing arbitrary memory through incrementing
+   or decrementing the pointer or reading data of another type that will fit in that memory. Go
    frowns upon this but provides a package for unsafe pointer usage like the one described above.
    (Its like the way girls say stop it but expect you not to stop, you know LOL!)
    Be careful when you use unsafe, it could result in very unpredictable behaviour of your programs.
@@ -50,7 +50,7 @@ import (
          // get the pointer of i and change it to an unsafe pointer.
          unsafePtr := unsafe.Pointer(&i)
 
-         // use type assertion to cast the value of unsafePtr to *int16
+		 // use type assertion to cast the value of unsafePtr to *int16
          int16Ptr := (*int16)(unsafePtr) // this is the syntax for golang type assertion
          // we do (*int16) because the type we are asserting is a pointer variable.
 
@@ -58,7 +58,7 @@ import (
          k := *int16Ptr
       }
 
-      // the variable k should be composed of 8 bits set to one and the rest set to 0. but trust me when i tell you
+      // the variable k should be composed of 8 bits set to one and the rest set to 0. but trust me when i tell you this,
       the value of k is changing with time LOL!. I'm even scared. Maybe it should be 0000000 1111111? probably this.
       But i'm sure i saw it change because when i tested in the morning it was something like 22739 or so, then it
       changed to some value looking like -7928, now its 255 which is believable.
@@ -109,7 +109,7 @@ type B struct {
    b := (*B)(&a)
    // this will give an error: "cannot convert a (variable of type A) to *B"
 
-   we can get do it without the compiler bitching about it with the unsafe
+   we can get do it without the compiler bitching about it with the unsafe.Pointer
 */
 
 /*

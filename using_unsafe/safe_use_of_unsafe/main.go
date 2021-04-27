@@ -47,9 +47,9 @@ func main() {
 	   are standard ways of doing it right.
 	   What we did is a security flaw and can be used to break your system or steal vital info.
 	   When you convert a pointer to uintptr, the garbage collector does not update the uintptr
-	   when the value is moved from that address it first stored at. Meaning if the object the
-	   uintptr is moved, uintptr now contains the memory address of nothing or something else
-	   other that what was once there which is dangerous. What if a user's credential is what is
+	   when the value is moved from that address it was first stored at. Meaning if the object the
+	   uintptr is referencing is moved, uintptr now contains the memory address of nothing or something else
+	   other that what was once there, which is very dangerous. What if a user's credential is what is
 	   now stored in memory? Bro you don fuck up be that..
 
 	   There is a better way to do this and not get judged by the go vet tool.

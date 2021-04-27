@@ -1,0 +1,6 @@
+
+SIZE OF UINT32 VALUE  IS 4bytes
+
+ptr: c000068f0c, value: 1
+ptr: c000068f10, value: 2
+ptr: c000068f14, value: 3

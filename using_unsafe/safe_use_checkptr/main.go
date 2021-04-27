@@ -22,18 +22,6 @@ type one struct{ v uint64 }
 type two struct{ b [32]byte }
 
 /*
-func main() {
-	// we want to send the contents of a to the kernel as raw bytes.
-	in := one{v: 0xff}
-	out := (*two)(unsafe.Pointer(&in))
-
-	// Assume the kernel will only access the first 8 bytes. But what is stored
-	// in the remaining 24 bytes?
-	fmt.Printf("%#v\n", out.b[0:8])
-}
-*/
-
-/*
    We have a little prblem with the above code. If we cast a smaller structure into a big one, we
    we enable the reading of arbitrary beyond the end of the end of the smaller structures data. This
    is another way the careless use `unsafe` can introduce problems into the application.
@@ -55,6 +43,16 @@ func newTwo(in one) *two {
 	)
 
 	return &out
+}
+
+func firstOne() {
+	// we want to send the contents of a to the kernel as raw bytes.
+	in := one{v: 0xff}
+	out := (*two)(unsafe.Pointer(&in))
+
+	// Assume the kernel will only access the first 8 bytes. But what is stored
+	// in the remaining 24 bytes?
+	fmt.Printf("%#v\n", out.b[0:8])
 }
 
 func main() {
