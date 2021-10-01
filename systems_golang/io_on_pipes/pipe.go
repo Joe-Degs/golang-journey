@@ -34,11 +34,11 @@ func main() {
 	}(pw)
 
 	wg.Add(1)
-	go func() {
+	go func(rc io.ReadCloser) {
 		defer wg.Done()
 		buf := make([]byte, 100)
 		for {
-			_, err := pr.Read(buf)
+			_, err := rc.Read(buf)
 			if err != nil {
 				if err == io.EOF {
 					break
@@ -48,7 +48,7 @@ func main() {
 			}
 			fmt.Fprintf(os.Stdout, "io on pipes: %s\n", string(buf))
 		}
-	}()
+	}(pr)
 
 	wg.Wait()
 }
